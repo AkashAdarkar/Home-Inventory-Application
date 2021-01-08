@@ -23,7 +23,8 @@ import java.awt.print.*;
  *
  * @author akash
  */
-public class homeInventory extends javax.swing.JFrame {
+public class homeInventory extends javax.swing.JFrame
+{
 
     /**
      * Creates new form homeInventory
@@ -42,10 +43,13 @@ public class homeInventory extends javax.swing.JFrame {
     
     
     
+    
     public homeInventory() {
         initComponents();
      
 }
+    
+    
     private void blankValues()
 {
 // blank input screen
@@ -89,6 +93,7 @@ itemTextField.requestFocus();
         jSeparator7 = new javax.swing.JToolBar.Separator();
         exitButton = new javax.swing.JButton();
         jSeparator8 = new javax.swing.JToolBar.Separator();
+        jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         itemTextField = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
@@ -201,6 +206,17 @@ itemTextField.requestFocus();
 
         jSeparator8.setBackground(new java.awt.Color(227, 243, 18));
         inventoryToolBar.add(jSeparator8);
+
+        jButton1.setText("Autofill");
+        jButton1.setFocusable(false);
+        jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        inventoryToolBar.add(jButton1);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -416,6 +432,8 @@ itemTextField.requestFocus();
         gridBagConstraints.insets = new java.awt.Insets(1, 1, 1, 1);
         getContentPane().add(jLabel8, gridBagConstraints);
 
+        photoTextArea.setEditable(false);
+        photoTextArea.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         photoTextArea.setPreferredSize(new java.awt.Dimension(350, 35));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
@@ -462,13 +480,13 @@ itemTextField.requestFocus();
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+        
     private void printButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_printButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_printButtonActionPerformed
 
     private void exitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitButtonActionPerformed
-        // TODO add your handling code here:
+       
     }//GEN-LAST:event_exitButtonActionPerformed
 
     private void locationComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_locationComboBoxActionPerformed
@@ -541,73 +559,14 @@ itemTextField.requestFocus();
     }//GEN-LAST:event_newButtonActionPerformed
 
     private void saveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveButtonActionPerformed
-      String  inven_name   = itemTextField.getText().toString();
-      String  location  = locationComboBox.getSelectedItem().toString();
-      String  marked  = markedCheckBox.getText().toString();
-      String  serialno   = serialTextField.getText().toString();
-      String  price   = priceTextField.getText().toString();
-      String date = dateDateChooser.getDateFormatString();
-      String  store   = storeTextField.getText().toString();
-      String  note   = noteTextField.getText().toString();
-      String  photo   = photoTextArea.getText().toString();
-      String file = "/home/akash/NetBeansProjects/Java_MicroProject/details.txt";
-      //
+      ReviewPanel review = new ReviewPanel();
+        review.setVisible(true);
       
-        
-        try
-        {
-            FileWriter Writer = new FileWriter(file,true);
-            itemTextField.write(Writer);
-            Writer.write(" ");
-            //locationComboBox.write(Writer);
-            //Writer.write(" ");
-            //markedCheckBox.write(Writer);
-            //Writer.write("");
-            serialTextField.write(Writer);
-            Writer.write(" ");
-            priceTextField.write(Writer);
-            Writer.write(" ");
-            //dateDateChooser.write(Writer);
-            Writer.write(" ");
-            storeTextField.write(Writer);
-            Writer.write(" ");
-           noteTextField.write(Writer);
-           Writer.write(" ");
-            photoTextArea.write(Writer);
-            Writer.write(" ");
-                 
-            Writer.write(System.lineSeparator());
-           // BufferedWriter bobj = new BufferedWriter(Writer);
-            /*Writer.write(" "+ name+" "+age); 
-            Writer.write(System.getProperty("line.seperator"));
-            //bobj.flush();*/
-            Writer.close();
-            JOptionPane.showMessageDialog(null,"Succes");
-            setVisible(false);
-            new homeInventory().setVisible(true);
-        }
-        catch(Exception e)
-        {
-        JOptionPane.showMessageDialog(rootPane,"Error");
-        }
+       
     }//GEN-LAST:event_saveButtonActionPerformed
 
     private void photoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_photoButtonActionPerformed
-        /*
-        
-        File f =   jc.getSelectedFile();
-        String filename = f.getAbsolutePath();
-        
-        image = image.replapce
-        txt_filename.setText(filename);
-        
-        
-        Image.getAbsolutePath = null;
-        ImageIcon Icon = new ImageIcon(filename);
-        Image image = icon.getImage().getScaledInstance(lb1_image.getWidth(),lb1_image.getHeight(),Image.SCALE_SMOOTH);
-        lbl_image.setrIcon(icon);
-        */
-        
+
         String flag = evt.getActionCommand();
          JFileChooser jc = new JFileChooser();
         jc.showOpenDialog(null);
@@ -620,17 +579,20 @@ itemTextField.requestFocus();
         ImageIcon icon = new ImageIcon(filename);
         Image image = icon.getImage().getScaledInstance(photoLabel.getWidth(),photoLabel.getHeight(),Image.SCALE_SMOOTH);
       photoLabel.setIcon(icon);
-        /*
-        int dialogVal = jc.showOpenDialog(null);
-         if (dialogVal == JFileChooser.APPROVE_OPTION)
-            {
-                    photoTextArea.setText(jc.getSelectedFile().getAbsolutePath());
-                    
-             }
-              else{
-                        photoTextArea.setText("Selection of the file cancelled!");
-                        }*/
+       
     }//GEN-LAST:event_photoButtonActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+         itemTextField.setText("Apple");
+       // locationComboBox.getSelectedItem().toString();   
+        serialTextField.setText("Fru");
+        priceTextField.setText("45");
+         storeTextField.setText("food.com");
+        noteTextField.setText("eat it");
+        //photoTextArea.setText("Apple");
+        //dateDateChooser
+       //photoLabel.setText("Apple");
+    }//GEN-LAST:event_jButton1ActionPerformed
     
     
   
@@ -642,17 +604,19 @@ itemTextField.requestFocus();
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-            new homeInventory().setVisible(true);
+             new homeInventory().setVisible(true);
+           
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private com.toedter.calendar.JDateChooser dateDateChooser;
+    public static com.toedter.calendar.JDateChooser dateDateChooser;
     private javax.swing.JButton deleteButton;
     private javax.swing.JButton exitButton;
     private javax.swing.JToolBar inventoryToolBar;
-    private javax.swing.JTextField itemTextField;
+    public static javax.swing.JTextField itemTextField;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -667,23 +631,25 @@ itemTextField.requestFocus();
     private javax.swing.JToolBar.Separator jSeparator5;
     private javax.swing.JToolBar.Separator jSeparator7;
     private javax.swing.JToolBar.Separator jSeparator8;
-    private javax.swing.JComboBox<String> locationComboBox;
+    public static javax.swing.JComboBox<String> locationComboBox;
     private javax.swing.JCheckBox markedCheckBox;
     private javax.swing.JButton newButton;
-    private javax.swing.JTextField noteTextField;
+    public static javax.swing.JTextField noteTextField;
     private javax.swing.JButton photoButton;
-    private javax.swing.JLabel photoLabel;
-    private javax.swing.JTextField photoTextArea;
-    private javax.swing.JTextField priceTextField;
+    public static javax.swing.JLabel photoLabel;
+    public static javax.swing.JTextField photoTextArea;
+    public static javax.swing.JTextField priceTextField;
     private javax.swing.JButton printButton;
     private javax.swing.JButton saveButton;
-    private javax.swing.JTextField serialTextField;
-    private javax.swing.JTextField storeTextField;
+    public static javax.swing.JTextField serialTextField;
+    public static javax.swing.JTextField storeTextField;
     // End of variables declaration//GEN-END:variables
 
     
     
      
 }
+
+
 
 

@@ -15,3 +15,53 @@ west
 1
 center
 10.0.10.10
+
+String  inven_name   = itemTextField.getText().toString();
+      String  location  = locationComboBox.getSelectedItem().toString();
+      String  marked  = markedCheckBox.getText().toString();
+      String  serialno   = serialTextField.getText().toString();
+      String  price   = priceTextField.getText().toString();
+      String date = dateDateChooser.getDateFormatString();
+      String  store   = storeTextField.getText().toString();
+      String  note   = noteTextField.getText().toString();
+      String  photo   = photoTextArea.getText().toString();
+      String file = "/home/akash/NetBeansProjects/Java_MicroProject/details.txt";
+      //
+      
+        
+        try
+        {
+            FileWriter Writer = new FileWriter(file,true);
+            itemTextField.write(Writer);
+            Writer.write(" ");
+            //locationComboBox.write(Writer);
+            Writer.write(" ");
+            //markedCheckBox.write(Writer);
+            //Writer.write("");
+            serialTextField.write(Writer);
+            Writer.write(" ");
+            priceTextField.write(Writer);
+            Writer.write(" ");
+            //dateDateChooser.write(Writer);
+            Writer.write(" ");
+            storeTextField.write(Writer);
+            Writer.write(" ");
+           noteTextField.write(Writer);
+           Writer.write(" ");
+            photoTextArea.write(Writer);
+            Writer.write(" ");
+                 
+            Writer.write(System.lineSeparator());
+           // BufferedWriter bobj = new BufferedWriter(Writer);
+            /*Writer.write(" "+ name+" "+age); 
+            Writer.write(System.getProperty("line.seperator"));
+            //bobj.flush();*/
+            Writer.close();
+            JOptionPane.showMessageDialog(null,"Succes");
+            setVisible(false);
+            new homeInventory().setVisible(true);
+        }
+        catch(Exception e)
+        {
+        JOptionPane.showMessageDialog(rootPane,"Error");
+        }
