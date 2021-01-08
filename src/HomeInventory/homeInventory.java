@@ -94,6 +94,8 @@ itemTextField.requestFocus();
         exitButton = new javax.swing.JButton();
         jSeparator8 = new javax.swing.JToolBar.Separator();
         jButton1 = new javax.swing.JButton();
+        jSeparator9 = new javax.swing.JToolBar.Separator();
+        ReviewButton = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         itemTextField = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
@@ -217,6 +219,23 @@ itemTextField.requestFocus();
             }
         });
         inventoryToolBar.add(jButton1);
+
+        jSeparator9.setBackground(new java.awt.Color(227, 243, 18));
+        inventoryToolBar.add(jSeparator9);
+
+        ReviewButton.setIcon(new javax.swing.ImageIcon("/home/akash/NetBeansProjects/Java_MicroProject/Inventory_Photos/print button.jpeg")); // NOI18N
+        ReviewButton.setText("Review");
+        ReviewButton.setToolTipText("Prints Iventory Item");
+        ReviewButton.setFocusable(false);
+        ReviewButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        ReviewButton.setPreferredSize(new java.awt.Dimension(70, 50));
+        ReviewButton.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        ReviewButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ReviewButtonActionPerformed(evt);
+            }
+        });
+        inventoryToolBar.add(ReviewButton);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -486,7 +505,7 @@ itemTextField.requestFocus();
     }//GEN-LAST:event_printButtonActionPerformed
 
     private void exitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitButtonActionPerformed
-       
+               System.exit(0);
     }//GEN-LAST:event_exitButtonActionPerformed
 
     private void locationComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_locationComboBoxActionPerformed
@@ -559,8 +578,7 @@ itemTextField.requestFocus();
     }//GEN-LAST:event_newButtonActionPerformed
 
     private void saveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveButtonActionPerformed
-      ReviewPanel review = new ReviewPanel();
-        review.setVisible(true);
+     
       
        
     }//GEN-LAST:event_saveButtonActionPerformed
@@ -593,6 +611,11 @@ itemTextField.requestFocus();
         //dateDateChooser
        //photoLabel.setText("Apple");
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void ReviewButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReviewButtonActionPerformed
+         ReviewPanel review = new ReviewPanel();
+        review.setVisible(true);
+    }//GEN-LAST:event_ReviewButtonActionPerformed
     
     
   
@@ -611,9 +634,10 @@ itemTextField.requestFocus();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton ReviewButton;
     public static com.toedter.calendar.JDateChooser dateDateChooser;
     private javax.swing.JButton deleteButton;
-    private javax.swing.JButton exitButton;
+    public static javax.swing.JButton exitButton;
     private javax.swing.JToolBar inventoryToolBar;
     public static javax.swing.JTextField itemTextField;
     private javax.swing.JButton jButton1;
@@ -631,6 +655,7 @@ itemTextField.requestFocus();
     private javax.swing.JToolBar.Separator jSeparator5;
     private javax.swing.JToolBar.Separator jSeparator7;
     private javax.swing.JToolBar.Separator jSeparator8;
+    private javax.swing.JToolBar.Separator jSeparator9;
     public static javax.swing.JComboBox<String> locationComboBox;
     private javax.swing.JCheckBox markedCheckBox;
     private javax.swing.JButton newButton;
