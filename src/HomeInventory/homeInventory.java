@@ -54,7 +54,7 @@ public class homeInventory extends javax.swing.JFrame
 {
 // blank input screen
 newButton.setEnabled(false);
-deleteButton.setEnabled(false);
+clearButton.setEnabled(false);
 saveButton.setEnabled(true);
 printButton.setEnabled(false);
 itemTextField.setText("");
@@ -85,17 +85,17 @@ itemTextField.requestFocus();
         inventoryToolBar = new javax.swing.JToolBar();
         newButton = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JToolBar.Separator();
-        deleteButton = new javax.swing.JButton();
+        clearButton = new javax.swing.JButton();
         jSeparator4 = new javax.swing.JToolBar.Separator();
         saveButton = new javax.swing.JButton();
         jSeparator5 = new javax.swing.JToolBar.Separator();
         printButton = new javax.swing.JButton();
         jSeparator7 = new javax.swing.JToolBar.Separator();
+        ReviewButton = new javax.swing.JButton();
+        jSeparator9 = new javax.swing.JToolBar.Separator();
         exitButton = new javax.swing.JButton();
         jSeparator8 = new javax.swing.JToolBar.Separator();
         jButton1 = new javax.swing.JButton();
-        jSeparator9 = new javax.swing.JToolBar.Separator();
-        ReviewButton = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         itemTextField = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
@@ -147,14 +147,19 @@ itemTextField.requestFocus();
         jSeparator1.setBackground(new java.awt.Color(227, 243, 18));
         inventoryToolBar.add(jSeparator1);
 
-        deleteButton.setIcon(new javax.swing.ImageIcon("/home/akash/NetBeansProjects/Java_MicroProject/Inventory_Photos/delete Button.jpeg")); // NOI18N
-        deleteButton.setText("Delete");
-        deleteButton.setToolTipText("Delete current  Item");
-        deleteButton.setFocusable(false);
-        deleteButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        deleteButton.setPreferredSize(new java.awt.Dimension(80, 50));
-        deleteButton.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        inventoryToolBar.add(deleteButton);
+        clearButton.setIcon(new javax.swing.ImageIcon("/home/akash/NetBeansProjects/Java_MicroProject/Inventory_Photos/delete Button.jpeg")); // NOI18N
+        clearButton.setText("Clear All");
+        clearButton.setToolTipText("Delete current  Item");
+        clearButton.setFocusable(false);
+        clearButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        clearButton.setPreferredSize(new java.awt.Dimension(80, 50));
+        clearButton.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        clearButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clearButtonActionPerformed(evt);
+            }
+        });
+        inventoryToolBar.add(clearButton);
 
         jSeparator4.setBackground(new java.awt.Color(227, 243, 18));
         inventoryToolBar.add(jSeparator4);
@@ -193,6 +198,23 @@ itemTextField.requestFocus();
         jSeparator7.setBackground(new java.awt.Color(227, 243, 18));
         inventoryToolBar.add(jSeparator7);
 
+        ReviewButton.setIcon(new javax.swing.ImageIcon("/home/akash/NetBeansProjects/Java_MicroProject/Inventory_Photos/print button.jpeg")); // NOI18N
+        ReviewButton.setText("Review");
+        ReviewButton.setToolTipText("Prints Iventory Item");
+        ReviewButton.setFocusable(false);
+        ReviewButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        ReviewButton.setPreferredSize(new java.awt.Dimension(70, 50));
+        ReviewButton.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        ReviewButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ReviewButtonActionPerformed(evt);
+            }
+        });
+        inventoryToolBar.add(ReviewButton);
+
+        jSeparator9.setBackground(new java.awt.Color(227, 243, 18));
+        inventoryToolBar.add(jSeparator9);
+
         exitButton.setText("Exit");
         exitButton.setToolTipText("Exits Program");
         exitButton.setFocusable(false);
@@ -219,23 +241,6 @@ itemTextField.requestFocus();
             }
         });
         inventoryToolBar.add(jButton1);
-
-        jSeparator9.setBackground(new java.awt.Color(227, 243, 18));
-        inventoryToolBar.add(jSeparator9);
-
-        ReviewButton.setIcon(new javax.swing.ImageIcon("/home/akash/NetBeansProjects/Java_MicroProject/Inventory_Photos/print button.jpeg")); // NOI18N
-        ReviewButton.setText("Review");
-        ReviewButton.setToolTipText("Prints Iventory Item");
-        ReviewButton.setFocusable(false);
-        ReviewButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        ReviewButton.setPreferredSize(new java.awt.Dimension(70, 50));
-        ReviewButton.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        ReviewButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ReviewButtonActionPerformed(evt);
-            }
-        });
-        inventoryToolBar.add(ReviewButton);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -534,7 +539,7 @@ itemTextField.requestFocus();
 
     private void itemTextFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_itemTextFieldKeyPressed
         newButton.setEnabled(true);
-                deleteButton.setEnabled(true);
+                clearButton.setEnabled(true);
                 saveButton.setEnabled(true);
                 printButton.setEnabled(true);
                 markedCheckBox.setSelected(true);
@@ -578,7 +583,55 @@ itemTextField.requestFocus();
     }//GEN-LAST:event_newButtonActionPerformed
 
     private void saveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveButtonActionPerformed
-     
+     String  inven_name   = itemTextField.getText().toString();
+      String  location  = locationComboBox.getSelectedItem().toString();
+      String  marked  = markedCheckBox.getText().toString();
+      String  serialno   = serialTextField.getText().toString();
+      String  price   = priceTextField.getText().toString();
+      String date = dateDateChooser.getDate().toString();
+      String  store   = storeTextField.getText().toString();
+      String  note   = noteTextField.getText().toString();
+      String  photo   = photoTextArea.getText().toString();
+      String file = "/home/akash/NetBeansProjects/Java_MicroProject/details.txt";
+      //
+      
+        
+        try
+        {
+            FileWriter Writer = new FileWriter(file,true);
+            itemTextField.write(Writer);
+            Writer.write(" ");
+            //locationComboBox.write(Writer);
+            Writer.write(" ");
+            //markedCheckBox.write(Writer);
+            //Writer.write("");
+            serialTextField.write(Writer);
+            Writer.write(" ");
+            priceTextField.write(Writer);
+            Writer.write(" ");
+            //dateDateChooser.write(Writer);
+            Writer.write(" ");
+            storeTextField.write(Writer);
+            Writer.write(" ");
+           noteTextField.write(Writer);
+           Writer.write(" ");
+            photoTextArea.write(Writer);
+            Writer.write(" ");
+                 
+            Writer.write(System.lineSeparator());
+           // BufferedWriter bobj = new BufferedWriter(Writer);
+            /*Writer.write(" "+ name+" "+age); 
+            Writer.write(System.getProperty("line.seperator"));
+            //bobj.flush();*/
+            Writer.close();
+            JOptionPane.showMessageDialog(null,"Succes");
+            setVisible(false);
+            new homeInventory().setVisible(true);
+        }
+        catch(Exception e)
+        {
+        JOptionPane.showMessageDialog(rootPane,"Error");
+        }
       
        
     }//GEN-LAST:event_saveButtonActionPerformed
@@ -616,6 +669,18 @@ itemTextField.requestFocus();
          ReviewPanel review = new ReviewPanel();
         review.setVisible(true);
     }//GEN-LAST:event_ReviewButtonActionPerformed
+
+    private void clearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearButtonActionPerformed
+        itemTextField.setText("");
+       // locationComboBox.getSelectedItem().toString();   
+        serialTextField.setText("");
+        priceTextField.setText("");
+         storeTextField.setText("");
+        noteTextField.setText(" ");
+        //photoTextArea.setText("Apple");
+        //dateDateChooser
+       //photoLabel.setText("Apple");
+    }//GEN-LAST:event_clearButtonActionPerformed
     
     
   
@@ -635,8 +700,8 @@ itemTextField.requestFocus();
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ReviewButton;
+    private javax.swing.JButton clearButton;
     public static com.toedter.calendar.JDateChooser dateDateChooser;
-    private javax.swing.JButton deleteButton;
     public static javax.swing.JButton exitButton;
     private javax.swing.JToolBar inventoryToolBar;
     public static javax.swing.JTextField itemTextField;
