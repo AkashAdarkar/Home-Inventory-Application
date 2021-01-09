@@ -73,6 +73,7 @@ noteTextField.setText("");
 photoTextArea.setText("");
 photoLabel.repaint();
 itemTextField.requestFocus();
+
 }
    
     
@@ -100,7 +101,6 @@ itemTextField.requestFocus();
         jSeparator9 = new javax.swing.JToolBar.Separator();
         exitButton = new javax.swing.JButton();
         jSeparator8 = new javax.swing.JToolBar.Separator();
-        jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         itemTextField = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
@@ -124,6 +124,7 @@ itemTextField.requestFocus();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Inventory Application");
+        setResizable(false);
         getContentPane().setLayout(new java.awt.GridBagLayout());
 
         inventoryToolBar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 4, true));
@@ -135,7 +136,7 @@ itemTextField.requestFocus();
         inventoryToolBar.setPreferredSize(new java.awt.Dimension(100, 436));
         inventoryToolBar.setRequestFocusEnabled(false);
 
-        newButton.setIcon(new javax.swing.ImageIcon("/home/akash/NetBeansProjects/Java_MicroProject/Inventory_Photos/newfilebtn.jpeg")); // NOI18N
+        newButton.setIcon(new javax.swing.ImageIcon("/home/akash/NetBeansProjects/Java_MicroProject/Button_images/newfilebtn.jpeg")); // NOI18N
         newButton.setText("New");
         newButton.setToolTipText("Add New Item");
         newButton.setFocusable(false);
@@ -152,7 +153,7 @@ itemTextField.requestFocus();
         jSeparator1.setBackground(new java.awt.Color(227, 243, 18));
         inventoryToolBar.add(jSeparator1);
 
-        clearButton.setIcon(new javax.swing.ImageIcon("/home/akash/NetBeansProjects/Java_MicroProject/Inventory_Photos/deletbtn.jpeg")); // NOI18N
+        clearButton.setIcon(new javax.swing.ImageIcon("/home/akash/NetBeansProjects/Java_MicroProject/Button_images/deletbtn.jpeg")); // NOI18N
         clearButton.setText("Clear All");
         clearButton.setToolTipText("Clears all entries");
         clearButton.setFocusable(false);
@@ -169,7 +170,7 @@ itemTextField.requestFocus();
         jSeparator4.setBackground(new java.awt.Color(227, 243, 18));
         inventoryToolBar.add(jSeparator4);
 
-        saveButton.setIcon(new javax.swing.ImageIcon("/home/akash/NetBeansProjects/Java_MicroProject/Inventory_Photos/savefilebtn.jpeg")); // NOI18N
+        saveButton.setIcon(new javax.swing.ImageIcon("/home/akash/NetBeansProjects/Java_MicroProject/Button_images/savefilebtn.jpeg")); // NOI18N
         saveButton.setText("Save");
         saveButton.setToolTipText("Saves current Item");
         saveButton.setFocusable(false);
@@ -186,7 +187,7 @@ itemTextField.requestFocus();
         jSeparator5.setBackground(new java.awt.Color(227, 243, 18));
         inventoryToolBar.add(jSeparator5);
 
-        printButton.setIcon(new javax.swing.ImageIcon("/home/akash/NetBeansProjects/Java_MicroProject/Inventory_Photos/printerbtn.jpeg")); // NOI18N
+        printButton.setIcon(new javax.swing.ImageIcon("/home/akash/NetBeansProjects/Java_MicroProject/Button_images/printerbtn.jpeg")); // NOI18N
         printButton.setText("Print");
         printButton.setToolTipText("Prints Iventory Item");
         printButton.setFocusable(false);
@@ -203,7 +204,7 @@ itemTextField.requestFocus();
         jSeparator7.setBackground(new java.awt.Color(227, 243, 18));
         inventoryToolBar.add(jSeparator7);
 
-        ReviewButton.setIcon(new javax.swing.ImageIcon("/home/akash/NetBeansProjects/Java_MicroProject/Inventory_Photos/reviewbtn.jpeg")); // NOI18N
+        ReviewButton.setIcon(new javax.swing.ImageIcon("/home/akash/NetBeansProjects/Java_MicroProject/Button_images/reviewbtn.jpeg")); // NOI18N
         ReviewButton.setText("Review");
         ReviewButton.setToolTipText("Prints Iventory Item");
         ReviewButton.setFocusable(false);
@@ -220,7 +221,7 @@ itemTextField.requestFocus();
         jSeparator9.setBackground(new java.awt.Color(227, 243, 18));
         inventoryToolBar.add(jSeparator9);
 
-        exitButton.setIcon(new javax.swing.ImageIcon("/home/akash/NetBeansProjects/Java_MicroProject/Inventory_Photos/exitbtn.jpeg")); // NOI18N
+        exitButton.setIcon(new javax.swing.ImageIcon("/home/akash/NetBeansProjects/Java_MicroProject/Button_images/exitbtn.jpeg")); // NOI18N
         exitButton.setText("Exit");
         exitButton.setToolTipText("Exits Program");
         exitButton.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED, new java.awt.Color(29, 206, 246), new java.awt.Color(209, 17, 49)));
@@ -237,17 +238,6 @@ itemTextField.requestFocus();
 
         jSeparator8.setBackground(new java.awt.Color(227, 243, 18));
         inventoryToolBar.add(jSeparator8);
-
-        jButton1.setText("Autofill");
-        jButton1.setFocusable(false);
-        jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        inventoryToolBar.add(jButton1);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -419,6 +409,7 @@ itemTextField.requestFocus();
 
         photoButton.setText("....");
         photoButton.setToolTipText("Select File (Image)");
+        photoButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         photoButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 photoButtonActionPerformed(evt);
@@ -431,6 +422,7 @@ itemTextField.requestFocus();
         gridBagConstraints.insets = new java.awt.Insets(10, 0, 0, 10);
         getContentPane().add(photoButton, gridBagConstraints);
 
+        dateDateChooser.setMinSelectableDate(new java.util.Date(-62135785687000L));
         dateDateChooser.setPreferredSize(new java.awt.Dimension(120, 25));
         dateDateChooser.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
@@ -640,7 +632,7 @@ itemTextField.requestFocus();
             FileWriter Writer = new FileWriter(file,true);
             itemTextField.write(Writer);
             Writer.write(" ");
-            //locationComboBox.write(Writer);
+           // locationComboBox.write(Writer);
             Writer.write(" ");
             //markedCheckBox.write(Writer);
             //Writer.write("");
@@ -692,18 +684,6 @@ itemTextField.requestFocus();
        
     }//GEN-LAST:event_photoButtonActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-         itemTextField.setText("Apple");
-       // locationComboBox.getSelectedItem().toString();   
-        serialTextField.setText("Fru");
-        priceTextField.setText("45");
-         storeTextField.setText("food.com");
-        noteTextField.setText("eat it");
-        //photoTextArea.setText("Apple");
-        //dateDateChooser
-       //photoLabel.setText("Apple");
-    }//GEN-LAST:event_jButton1ActionPerformed
-
     private void ReviewButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReviewButtonActionPerformed
         ReviewPanel  review = new ReviewPanel();
         review.setVisible(true);
@@ -744,7 +724,6 @@ itemTextField.requestFocus();
     public static javax.swing.JButton exitButton;
     private javax.swing.JToolBar inventoryToolBar;
     public static javax.swing.JTextField itemTextField;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
