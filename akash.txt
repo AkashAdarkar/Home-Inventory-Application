@@ -65,3 +65,25 @@ String  inven_name   = itemTextField.getText().toString();
         {
         JOptionPane.showMessageDialog(rootPane,"Error");
         }
+        
+        
+        
+        
+        
+        
+        
+        ReviewPanel  review = new ReviewPanel();      
+        String  printdata = review.jPanel1.getText();
+                PrinterJob job = PrinterJob.getPrinterJob();
+                boolean  doPrint = job.printDialog();
+                if (doPrint)
+                {
+                    try
+                    {
+                        job.print();
+                    }
+                    catch( PrinterException e)
+                    {
+                        
+                    }
+                }

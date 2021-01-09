@@ -18,6 +18,11 @@ import java.awt.geom.*;
 import java.util.*;
 import java.text.*;
 import java.awt.print.*;
+import java.awt.print.PrinterException;
+import java.awt.print.PrinterJob;
+import java.awt.print.Printable;
+
+
 
 /**
  *
@@ -506,7 +511,39 @@ itemTextField.requestFocus();
     }// </editor-fold>//GEN-END:initComponents
         
     private void printButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_printButtonActionPerformed
-        // TODO add your handling code here:
+       ReviewPanel  review = new ReviewPanel();
+       
+        PrinterJob job = PrinterJob.getPrinterJob();
+            job.setJobName("Print Data");
+            
+            job.setPrintable(new Printable(){
+            public int print(Graphics pg,PageFormat pf, int pageNum){
+                    pf.setOrientation(PageFormat.LANDSCAPE);
+                 if(pageNum>0){
+                    return Printable.NO_SUCH_PAGE;
+                }
+                
+                Graphics2D g2 = (Graphics2D)pg;
+                g2.translate(pf.getImageableX(), pf.getImageableY());
+                g2.scale(0.24,0.24);
+                
+                ReviewPanel.jPanel1.paint(g2);
+//          
+               
+                return Printable.PAGE_EXISTS;
+                         
+                
+            }
+    });
+         
+        boolean ok = job.printDialog();
+        if(ok){
+        try{
+            
+        job.print();
+        }
+        catch (PrinterException ex){}
+        }
     }//GEN-LAST:event_printButtonActionPerformed
 
     private void exitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitButtonActionPerformed
@@ -666,7 +703,7 @@ itemTextField.requestFocus();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void ReviewButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReviewButtonActionPerformed
-         ReviewPanel review = new ReviewPanel();
+        ReviewPanel  review = new ReviewPanel();
         review.setVisible(true);
     }//GEN-LAST:event_ReviewButtonActionPerformed
 
