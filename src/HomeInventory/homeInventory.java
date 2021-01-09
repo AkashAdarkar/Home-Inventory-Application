@@ -135,7 +135,7 @@ itemTextField.requestFocus();
         inventoryToolBar.setPreferredSize(new java.awt.Dimension(100, 436));
         inventoryToolBar.setRequestFocusEnabled(false);
 
-        newButton.setIcon(new javax.swing.ImageIcon("/home/akash/NetBeansProjects/Java_MicroProject/Inventory_Photos/new buttion.jpeg")); // NOI18N
+        newButton.setIcon(new javax.swing.ImageIcon("/home/akash/NetBeansProjects/Java_MicroProject/Inventory_Photos/newfilebtn.jpeg")); // NOI18N
         newButton.setText("New");
         newButton.setToolTipText("Add New Item");
         newButton.setFocusable(false);
@@ -152,9 +152,9 @@ itemTextField.requestFocus();
         jSeparator1.setBackground(new java.awt.Color(227, 243, 18));
         inventoryToolBar.add(jSeparator1);
 
-        clearButton.setIcon(new javax.swing.ImageIcon("/home/akash/NetBeansProjects/Java_MicroProject/Inventory_Photos/delete Button.jpeg")); // NOI18N
+        clearButton.setIcon(new javax.swing.ImageIcon("/home/akash/NetBeansProjects/Java_MicroProject/Inventory_Photos/deletbtn.jpeg")); // NOI18N
         clearButton.setText("Clear All");
-        clearButton.setToolTipText("Delete current  Item");
+        clearButton.setToolTipText("Clears all entries");
         clearButton.setFocusable(false);
         clearButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         clearButton.setPreferredSize(new java.awt.Dimension(80, 50));
@@ -169,7 +169,7 @@ itemTextField.requestFocus();
         jSeparator4.setBackground(new java.awt.Color(227, 243, 18));
         inventoryToolBar.add(jSeparator4);
 
-        saveButton.setIcon(new javax.swing.ImageIcon("/home/akash/NetBeansProjects/Java_MicroProject/Inventory_Photos/save Button.jpeg")); // NOI18N
+        saveButton.setIcon(new javax.swing.ImageIcon("/home/akash/NetBeansProjects/Java_MicroProject/Inventory_Photos/savefilebtn.jpeg")); // NOI18N
         saveButton.setText("Save");
         saveButton.setToolTipText("Saves current Item");
         saveButton.setFocusable(false);
@@ -186,7 +186,7 @@ itemTextField.requestFocus();
         jSeparator5.setBackground(new java.awt.Color(227, 243, 18));
         inventoryToolBar.add(jSeparator5);
 
-        printButton.setIcon(new javax.swing.ImageIcon("/home/akash/NetBeansProjects/Java_MicroProject/Inventory_Photos/print button.jpeg")); // NOI18N
+        printButton.setIcon(new javax.swing.ImageIcon("/home/akash/NetBeansProjects/Java_MicroProject/Inventory_Photos/printerbtn.jpeg")); // NOI18N
         printButton.setText("Print");
         printButton.setToolTipText("Prints Iventory Item");
         printButton.setFocusable(false);
@@ -203,7 +203,7 @@ itemTextField.requestFocus();
         jSeparator7.setBackground(new java.awt.Color(227, 243, 18));
         inventoryToolBar.add(jSeparator7);
 
-        ReviewButton.setIcon(new javax.swing.ImageIcon("/home/akash/NetBeansProjects/Java_MicroProject/Inventory_Photos/print button.jpeg")); // NOI18N
+        ReviewButton.setIcon(new javax.swing.ImageIcon("/home/akash/NetBeansProjects/Java_MicroProject/Inventory_Photos/reviewbtn.jpeg")); // NOI18N
         ReviewButton.setText("Review");
         ReviewButton.setToolTipText("Prints Iventory Item");
         ReviewButton.setFocusable(false);
@@ -220,8 +220,10 @@ itemTextField.requestFocus();
         jSeparator9.setBackground(new java.awt.Color(227, 243, 18));
         inventoryToolBar.add(jSeparator9);
 
+        exitButton.setIcon(new javax.swing.ImageIcon("/home/akash/NetBeansProjects/Java_MicroProject/Inventory_Photos/exitbtn.jpeg")); // NOI18N
         exitButton.setText("Exit");
         exitButton.setToolTipText("Exits Program");
+        exitButton.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED, new java.awt.Color(29, 206, 246), new java.awt.Color(209, 17, 49)));
         exitButton.setFocusable(false);
         exitButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         exitButton.setPreferredSize(new java.awt.Dimension(70, 50));
@@ -467,7 +469,7 @@ itemTextField.requestFocus();
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 6;
-        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         gridBagConstraints.insets = new java.awt.Insets(10, 0, 0, 10);
         getContentPane().add(photoTextArea, gridBagConstraints);
