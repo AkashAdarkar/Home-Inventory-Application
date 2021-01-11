@@ -475,21 +475,21 @@ itemTextField.requestFocus();
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 524, Short.MAX_VALUE)
+            .addGap(0, 501, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(photoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addContainerGap()
+                    .addComponent(photoLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 469, Short.MAX_VALUE)
+                    .addGap(20, 20, 20)))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 524, Short.MAX_VALUE)
+            .addGap(0, 471, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(photoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addContainerGap()
+                    .addComponent(photoLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 447, Short.MAX_VALUE)
+                    .addContainerGap()))
         );
 
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -505,9 +505,7 @@ itemTextField.requestFocus();
     }// </editor-fold>//GEN-END:initComponents
         
     private void printButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_printButtonActionPerformed
-       ReviewPanel  review = new ReviewPanel();
-       
-        PrinterJob job = PrinterJob.getPrinterJob();
+                  PrinterJob job = PrinterJob.getPrinterJob();
             job.setJobName("Print Data");
             
             job.setPrintable(new Printable(){
@@ -520,8 +518,8 @@ itemTextField.requestFocus();
                 Graphics2D g2 = (Graphics2D)pg;
                 g2.translate(pf.getImageableX(), pf.getImageableY());
                 g2.scale(0.24,0.24);
-                
-                ReviewPanel.jPanel1.paint(g2);
+                ReviewPanel  review = new ReviewPanel();
+                review.jPanel1.paint(g2);
 //          
                
                 return Printable.PAGE_EXISTS;
@@ -537,7 +535,7 @@ itemTextField.requestFocus();
         job.print();
         }
         catch (PrinterException ex){}
-        }
+        }    
     }//GEN-LAST:event_printButtonActionPerformed
 
     private void exitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitButtonActionPerformed
@@ -687,6 +685,17 @@ itemTextField.requestFocus();
     private void ReviewButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReviewButtonActionPerformed
         ReviewPanel  review = new ReviewPanel();
         review.setVisible(true);
+         review.name.setText(homeInventory.itemTextField.getText());
+          review.loc.setText(homeInventory.locationComboBox.getSelectedItem().toString());   
+          review.serial_no.setText(homeInventory.serialTextField.getText());
+          review.price.setText(homeInventory.priceTextField.getText()+"Rs"); 
+          review.store.setText(homeInventory.storeTextField.getText());
+          review.note.setText(homeInventory.noteTextField.getText());
+          review.image.setText(homeInventory.photoTextArea.getText());
+          review.date.setText(homeInventory.dateDateChooser.getDate().toString());
+         review.jLabel10.setIcon(homeInventory.photoLabel.getIcon());
+        review.jLabel10.setText("");
+        //review.printDate.get();
     }//GEN-LAST:event_ReviewButtonActionPerformed
 
     private void clearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearButtonActionPerformed
@@ -740,7 +749,7 @@ itemTextField.requestFocus();
     private javax.swing.JToolBar.Separator jSeparator8;
     private javax.swing.JToolBar.Separator jSeparator9;
     public static javax.swing.JComboBox<String> locationComboBox;
-    private javax.swing.JCheckBox markedCheckBox;
+    public static javax.swing.JCheckBox markedCheckBox;
     private javax.swing.JButton newButton;
     public static javax.swing.JTextField noteTextField;
     private javax.swing.JButton photoButton;
@@ -754,7 +763,7 @@ itemTextField.requestFocus();
     // End of variables declaration//GEN-END:variables
 
     
-    
+   
      
 }
 

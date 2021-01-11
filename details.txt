@@ -1,9 +1,1 @@
-DOg DOG4567 4500  geekforpets.in Feed HIM REGULARLY /home/akash/NetBeansProjects/Java_MicroProject/Inventory_Photos/me and my boys (meme) .png 
-SOCKs SCKIO123 12345  amazon.in wear it!! /home/akash/NetBeansProjects/Java_MicroProject/Inventory_Photos/me and my boys (meme) .png 
-fgh thtr trhtrh  wrthewh dfbtrt /home/akash/NetBeansProjects/Java_MicroProject/Inventory_Photos/me and my boys (meme) .png 
-DOg REX1234 500  olx.com Feed him /home/akash/NetBeansProjects/Java_MicroProject/Inventory_Photos/me and my boys (meme) .png 
-       
-caT 123444 50000000  AMAZON.IN FEED IT /home/akash/NetBeansProjects/Java_MicroProject/Inventory_Photos/me and my boys (meme) .png 
-cake 300 200  monginis hbd /home/akash/NetBeansProjects/Java_MicroProject/Inventory_Photos/me and my boys (meme) .png 
-Apple  Fru 45  food.com eat it /home/akash/NetBeansProjects/Java_MicroProject/Inventory_Photos/apple.jpeg 
-         
+AppleApple  FRuit57 45  food.in eatit /home/akash/NetBeansProjects/Java_MicroProject/Button_images/apple.jpeg 

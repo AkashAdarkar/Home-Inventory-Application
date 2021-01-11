@@ -5,6 +5,14 @@
  */
 package HomeInventory;
 
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.print.PageFormat;
+import java.awt.print.Printable;
+import java.awt.print.PrinterException;
+import java.awt.print.PrinterJob;
+import javax.swing.JPanel;
+
 
 
 
@@ -54,153 +62,174 @@ public class ReviewPanel extends javax.swing.JFrame {
         image = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         note = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
         date = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        RefreshButton = new javax.swing.JButton();
+        printDate = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Review");
         setAlwaysOnTop(true);
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        setResizable(false);
+
+        jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
         jPanel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(65, 12, 139), 3, true));
+        jPanel1.setForeground(new java.awt.Color(14, 12, 24));
+        jPanel1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jPanel1.addMouseWheelListener(new java.awt.event.MouseWheelListener() {
             public void mouseWheelMoved(java.awt.event.MouseWheelEvent evt) {
                 jPanel1MouseWheelMoved(evt);
             }
         });
 
+        jLabel3.setFont(new java.awt.Font("Ubuntu", 0, 20)); // NOI18N
         jLabel3.setText("Location:");
 
+        jLabel4.setFont(new java.awt.Font("Ubuntu", 0, 20)); // NOI18N
         jLabel4.setText("Item Name:");
 
+        jLabel6.setFont(new java.awt.Font("Ubuntu", 0, 20)); // NOI18N
         jLabel6.setText("Serial Number:");
+        jLabel6.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
 
+        jLabel7.setFont(new java.awt.Font("Ubuntu", 0, 20)); // NOI18N
         jLabel7.setText("Note:");
 
+        jLabel8.setFont(new java.awt.Font("Ubuntu", 0, 20)); // NOI18N
         jLabel8.setText("Image location:");
 
+        jLabel9.setFont(new java.awt.Font("Ubuntu", 0, 20)); // NOI18N
         jLabel9.setText("Store/Website:");
 
-        loc.setFont(new java.awt.Font("Ubuntu", 0, 17)); // NOI18N
+        loc.setFont(new java.awt.Font("Ubuntu", 0, 20)); // NOI18N
         loc.setText("LOCATION");
 
-        name.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
+        name.setFont(new java.awt.Font("Ubuntu", 0, 20)); // NOI18N
         name.setText("NAME");
 
-        serial_no.setFont(new java.awt.Font("Ubuntu", 1, 20)); // NOI18N
+        serial_no.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
         serial_no.setText("SERIAL");
+        serial_no.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
+        serial_no.setVerifyInputWhenFocusTarget(false);
 
-        price.setFont(new java.awt.Font("Ubuntu", 0, 17)); // NOI18N
+        price.setFont(new java.awt.Font("Ubuntu", 0, 20)); // NOI18N
         price.setText("PRICE");
+        price.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        store.setFont(new java.awt.Font("Ubuntu", 0, 17)); // NOI18N
+        store.setFont(new java.awt.Font("Ubuntu", 0, 20)); // NOI18N
         store.setText("STORE");
 
-        image.setFont(new java.awt.Font("Ubuntu", 0, 17)); // NOI18N
+        image.setFont(new java.awt.Font("Ubuntu", 2, 20)); // NOI18N
         image.setText("IMG_LOCATION");
 
+        jLabel14.setFont(new java.awt.Font("Ubuntu", 0, 20)); // NOI18N
         jLabel14.setText("Purchased Price:");
 
-        note.setFont(new java.awt.Font("Ubuntu", 0, 17)); // NOI18N
+        note.setFont(new java.awt.Font("Ubuntu", 0, 20)); // NOI18N
         note.setText("NOTE");
 
-        jLabel1.setText("Purchased Date:");
-
-        date.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
+        date.setFont(new java.awt.Font("TlwgTypewriter", 0, 21)); // NOI18N
         date.setText("DATE");
 
-        jLabel2.setText("Photo:");
+        jLabel1.setFont(new java.awt.Font("Ubuntu", 0, 20)); // NOI18N
+        jLabel1.setText("Purchased Date:");
+        jLabel1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
+        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel10.setText("PHOTO");
+        jLabel10.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        jLabel10.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jLabel10.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
+        jLabel11.setBackground(java.awt.Color.yellow);
         jLabel11.setFont(new java.awt.Font("Noto Serif CJK JP", 0, 24)); // NOI18N
-        jLabel11.setText("                            HOME INVENTORY RECEIPT");
+        jLabel11.setForeground(new java.awt.Color(6, 6, 8));
+        jLabel11.setText("                                        HOME INVENTORY RECEIPT");
+        jLabel11.setOpaque(true);
+
+        printDate.setText("jLabel12");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(printDate)
+                .addGap(79, 79, 79))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel10))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel8)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(image)))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel14)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(price))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel9)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(store))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(loc)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 853, Short.MAX_VALUE)
-                        .addComponent(jLabel5)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(name))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(634, 634, 634)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel1)
+                                        .addComponent(jLabel14)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(date))
+                                        .addComponent(price))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel9)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(store))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel4)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(name))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel3)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(loc))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(jLabel6)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(serial_no)))))
-                        .addGap(0, 224, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel7)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(note)
-                        .addGap(0, 0, Short.MAX_VALUE))))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(92, 92, 92)
-                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 623, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                                        .addComponent(serial_no)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel5)
+                                .addGap(438, 438, 438))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(date)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 685, Short.MAX_VALUE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel7)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(note))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel8)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(image))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(149, 149, 149)
+                                        .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 418, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(0, 0, Short.MAX_VALUE)))))
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, 169, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel5)
-                .addGap(62, 62, 62)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(name)
                     .addComponent(jLabel6)
                     .addComponent(serial_no))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(name))
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(loc)
-                    .addComponent(date)
-                    .addComponent(jLabel1))
+                    .addComponent(loc))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel14)
@@ -209,34 +238,24 @@ public class ReviewPanel extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
                     .addComponent(store))
-                .addGap(22, 22, 22)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7)
-                    .addComponent(note))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(date)
+                    .addComponent(jLabel1))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
                     .addComponent(image))
-                .addGap(25, 25, 25)
+                .addGap(17, 17, 17)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel10)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(305, Short.MAX_VALUE))
+                    .addComponent(jLabel7)
+                    .addComponent(note))
+                .addGap(0, 0, 0)
+                .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 91, Short.MAX_VALUE)
+                .addGap(84, 84, 84)
+                .addComponent(printDate))
         );
 
         jScrollPane1.setViewportView(jPanel1);
-
-        RefreshButton.setIcon(new javax.swing.ImageIcon("/home/akash/NetBeansProjects/Java_MicroProject/Inventory_Photos/refreshbtn.jpeg")); // NOI18N
-        RefreshButton.setText("Refresh");
-        RefreshButton.setToolTipText("refreshes the frame");
-        RefreshButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        RefreshButton.setPreferredSize(new java.awt.Dimension(70, 50));
-        RefreshButton.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        RefreshButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RefreshButtonActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -244,96 +263,19 @@ public class ReviewPanel extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 850, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(RefreshButton, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 862, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(72, 72, 72)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(RefreshButton, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 783, Short.MAX_VALUE))
+                .addGap(0, 0, 0)
+                .addComponent(jScrollPane1)
                 .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void RefreshButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RefreshButtonActionPerformed
-
-         name.setText(homeInventory.itemTextField.getText());
-         loc.setText(homeInventory.locationComboBox.getSelectedItem().toString());   
-         serial_no.setText(homeInventory.serialTextField.getText());
-         price.setText(homeInventory.priceTextField.getText()); 
-         store.setText(homeInventory.storeTextField.getText());
-         note.setText(homeInventory.noteTextField.getText());
-         image.setText(homeInventory.photoTextArea.getText());
-         date.setText(homeInventory.dateDateChooser.getDate().toString());
-        jLabel10.setIcon(homeInventory.photoLabel.getIcon());
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        /*String  inven_name   = itemTextField.getText().toString();
-      String  location  = locationComboBox.getSelectedItem().toString();
-      String  marked  = markedCheckBox.getText().toString();
-      String  serialno   = serialTextField.getText().toString();
-      String  price   = priceTextField.getText().toString();
-      String date = dateDateChooser.getDateFormatString();
-      String  store   = storeTextField.getText().toString();
-      String  note   = noteTextField.getText().toString();
-      String  photo   = photoTextArea.getText().toString();
-      String file = "/home/akash/NetBeansProjects/Java_MicroProject/details.txt";
-      //
-      
-        
-        try
-        {
-            FileWriter Writer = new FileWriter(file,true);
-            itemTextField.write(Writer);
-            Writer.write(" ");
-            //locationComboBox.write(Writer);
-            Writer.write(" ");
-            //markedCheckBox.write(Writer);
-            //Writer.write("");
-            serialTextField.write(Writer);
-            Writer.write(" ");
-            priceTextField.write(Writer);
-            Writer.write(" ");
-            //dateDateChooser.write(Writer);
-            Writer.write(" ");
-            storeTextField.write(Writer);
-            Writer.write(" ");
-           noteTextField.write(Writer);
-           Writer.write(" ");
-            photoTextArea.write(Writer);
-            Writer.write(" ");
-                 
-            Writer.write(System.lineSeparator());
-           // BufferedWriter bobj = new BufferedWriter(Writer);
-            /*Writer.write(" "+ name+" "+age); 
-            Writer.write(System.getProperty("line.seperator"));
-            //bobj.flush();
-            Writer.close();
-            JOptionPane.showMessageDialog(null,"Succes");
-            setVisible(false);
-            new homeInventory().setVisible(true);
-        }
-        catch(Exception e)
-        {
-        JOptionPane.showMessageDialog(rootPane,"Error");
-        }  */
-    }//GEN-LAST:event_RefreshButtonActionPerformed
 
     private void jPanel1MouseWheelMoved(java.awt.event.MouseWheelEvent evt) {//GEN-FIRST:event_jPanel1MouseWheelMoved
       
@@ -376,14 +318,12 @@ public class ReviewPanel extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton RefreshButton;
-    private javax.swing.JLabel date;
-    private javax.swing.JLabel image;
+    public javax.swing.JLabel date;
+    public javax.swing.JLabel image;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
+    public javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -393,11 +333,14 @@ public class ReviewPanel extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     public javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JLabel loc;
+    public javax.swing.JLabel loc;
     public javax.swing.JLabel name;
-    private javax.swing.JLabel note;
-    private javax.swing.JLabel price;
-    private javax.swing.JLabel serial_no;
-    private javax.swing.JLabel store;
+    public javax.swing.JLabel note;
+    public javax.swing.JLabel price;
+    public javax.swing.JLabel printDate;
+    public javax.swing.JLabel serial_no;
+    public javax.swing.JLabel store;
     // End of variables declaration//GEN-END:variables
+ 
+
 }
