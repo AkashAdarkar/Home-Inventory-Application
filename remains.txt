@@ -1,4 +1,58 @@
-int n;
+  String filePath = "C:\\Users\\Desktop\\table.txt";
+        File file = new File(filePath);
+        
+        try {
+            BufferedReader br = new BufferedReader(new FileReader(file));
+            // get the first line
+            // get the columns name from the first line
+            // set columns name to the jtable model
+            String firstLine = br.readLine().trim();
+            String[] columnsName = firstLine.split(",");
+            DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
+            model.setColumnIdentifiers(columnsName);
+            
+            // get lines from txt file
+            Object[] tableLines = br.lines().toArray();
+            
+            // extratct data from lines
+            // set data to jtable model
+            for(int i = 0; i < tableLines.length; i++)
+            {
+                String line = tableLines[i].toString().trim();
+                String[] dataRow = line.split("/");
+                model.addRow(dataRow);
+            }
+            
+            
+        } catch (Exception ex) {
+            Logger.getLogger(TextFileDataToJTable.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
+        Buffered Writer method to write string in txt..
+        String= "Save"
+        
+        try{
+        BufferedWriter writer = new BufferedWriter(new FileWriter());
+        Writer.write(String);
+        Writer.close();
+        
+        }
+        
+        catch(IOException e)
+        {
+        
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        input file from txt (irrelevant)
+        int n;
      try {
                 BufferedReader inputFile = new BufferedReader(new FileReader("inventory.txt"));
                 numberEntries = Integer.valueOf(inputFile.readLine()).intValue();
@@ -40,4 +94,3 @@ int n;
         //previousButton.setEnabled(false);
         printButton.setEnabled(false);
     }
-        

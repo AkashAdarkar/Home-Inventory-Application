@@ -1,0 +1,1 @@
+Inventory Item,Location ,Serial Number ,Purchased Price ,Store or Website ,Note ,Photo,Date
