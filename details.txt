@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 int n;
      try {
                 BufferedReader inputFile = new BufferedReader(new FileReader("inventory.txt"));
@@ -41,3 +42,7 @@ int n;
         printButton.setEnabled(false);
     }
         
+=======
+
+         
+>>>>>>> 41a7aa4875bd44f29527aebccd9776464c9dba71
