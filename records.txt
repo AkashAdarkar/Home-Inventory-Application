@@ -1,1 +1,4 @@
 Inventory Item,Location ,Serial Number ,Purchased Price ,Store or Website ,Note ,Photo,Date
+Apple%% My office%% FRUIT123-45%% 45rs%% fruBasket.com%% wash  it pls1%% /home/akash/apple.jpeg%% Tue Jan 12 20:42:20 IST 2021%% 
+Apple%% Always Lost%% FRUIT45%% 45rs%% foodfood.com%% wash before consuming%% /home/akash/apple.jpeg%% Wed Jan 13 20:36:25 IST 2021%% 
+Apple%% Always Lost%% FRU7648%% 45rs%% FoodFood.com%% Wash before eating%% /home/akash/apple.jpeg%% Sun Jan 24 15:46:20 IST 2021%% 

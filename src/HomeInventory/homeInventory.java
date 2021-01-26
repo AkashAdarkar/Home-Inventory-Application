@@ -120,12 +120,12 @@ itemTextField.requestFocus();
         noteTextField = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         photoButton = new javax.swing.JButton();
-        dateDateChooser = new com.toedter.calendar.JDateChooser();
         priceTextField = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         photoTextArea = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
         photoLabel = new javax.swing.JLabel();
+        dateDateChooser = new com.toedter.calendar.JDateChooser();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Inventory Application");
@@ -459,21 +459,6 @@ itemTextField.requestFocus();
         gridBagConstraints.insets = new java.awt.Insets(10, 0, 0, 10);
         getContentPane().add(photoButton, gridBagConstraints);
 
-        dateDateChooser.setMinSelectableDate(new java.util.Date(-62135785687000L));
-        dateDateChooser.setPreferredSize(new java.awt.Dimension(120, 25));
-        dateDateChooser.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                dateDateChooserKeyPressed(evt);
-            }
-        });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 5;
-        gridBagConstraints.gridy = 3;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
-        gridBagConstraints.insets = new java.awt.Insets(10, 0, 0, 10);
-        getContentPane().add(dateDateChooser, gridBagConstraints);
-
         priceTextField.setPreferredSize(new java.awt.Dimension(160, 25));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
@@ -527,7 +512,7 @@ itemTextField.requestFocus();
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(photoLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 309, Short.MAX_VALUE)
+                    .addComponent(photoLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE)
                     .addContainerGap()))
         );
 
@@ -539,6 +524,15 @@ itemTextField.requestFocus();
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         gridBagConstraints.insets = new java.awt.Insets(10, 0, 10, 10);
         getContentPane().add(jPanel1, gridBagConstraints);
+
+        dateDateChooser.setPreferredSize(new java.awt.Dimension(120, 25));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 5;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(10, 0, 10, 10);
+        getContentPane().add(dateDateChooser, gridBagConstraints);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
